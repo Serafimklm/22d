@@ -1,4 +1,11 @@
 package com.example.myapplication
+
+/*import com.example.myapplication.Pessoa.DesenvolvedorAdnroditivo
+import com.example.myapplication.Pessoa.DevWebDevops
+import com.example.myapplication.Pessoa.FuncionarioPublico
+import com.example.myapplication.Pessoa.Jornallista*/
+import java.util.Scanner
+
 /*
 //import com.example.myapplication.Passaro
 
@@ -400,6 +407,141 @@ open class Carro { // classe pai
 }
 *//*
 //---------------------------modificadores de acesso===modulos--------------------------------------*/
+//Em resumo:
+//
+//    Atributos descrevem o que um objeto é (suas características).
+//    Métodos descrevem o que um objeto pode fazer (suas ações).
+//
+/*class Pessoa(){
+  var nome : String = "";
+    fun saldar() : String {  // metodo que retorna uma string
+        return "acenando"}
+}
+
+
 fun main() {
 
+  val pessoa = Pessoa();
+  // definindo o nome da pessoa
+    pessoa.nome= "senna"
+  // chamando o metodo saldar
+    pessoa.saldar()
+  //imprimindo o nome da pessoa que foi digitado no atributo nome;
+    println(pessoa.nome)
+
+
+  val pessoa2 = Pessoa();
+  //implementando classe scanner para ler o nome da pessoa que foi digitado no teclado;
+  val scanner = Scanner(System.`in`)
+  println("digite o nome da pessoa") // solicita a entrada via teclado do nome
+  pessoa2.nome = scanner.nextLine() // armazena a entrada do usuário no atributo nome da pessoa2
+  pessoa2.saldar() // chama o método saldar da pessoa2
+   // e necessario que a funcao seja declarada como string ou a variavel desejada para que seja possil imprimir o resultado
+  println("${pessoa2.nome} esta ${pessoa2.saldar()}")  // imprime o nome da pessoa2 que foi digitado no teclado;
+
+}*/
+// como iremos criar uma relacao de heranca vamos colocar como abstract class Pessoa
+// se a classe nao tiver como abstata ele nao sera acessivel a partir de outras classes
+
+
+//=======================================INTERFACES=================================================
+
+
+
+/*
+
+fun main() {
+  val desenvolvedorAdnroditivo = DesenvolvedorAdnroditivo();
+  println("o desenvolvedor esta " + desenvolvedorAdnroditivo.comer()) //chamando o metodo comer da classe Pessoa que esta acessivel gracas esta como abtract
+  desenvolvedorAdnroditivo.programar()
+  println("-------------")
+
+
+  val jornallista = Jornallista();
+  println("o jornalista esta " + jornallista.comer())
+  jornallista.reportar()
+  println("O jornalista vai" + jornallista.seCandidatar())
+  println("-------------")
+
+  val funcionarioPublico = FuncionarioPublico();
+  println("o funcionario esta " + funcionarioPublico.comer())
+  funcionarioPublico.trabalhar()
+  println("-------------")
+
+
+  val devWebDevops = DevWebDevops();
+  println("o desenvolvedor esta " + devWebDevops.comer())
+  devWebDevops.deployar()
+  println("O DevOps vai " + devWebDevops.seCandidatar())
+  println("-------------")
+
+// para que seja viavel usar interface, apos a declaracao da classe deve haver um hoverride fun, como abaixo
+  // override fun seCandidatar() {
+  //        println("candidatar-se a cargo politico")
+  //      }
 }
+
+// apenas se eu declara que a classe herda da interface que eu tenho obrigacao de delcarar os metodos da interface, como por ex, jornalista de DevWebDevops
+interface CandidatoApresidencia {
+  fun seCandidatar() : String {
+    return "se candidatar a cargo politico"
+  }
+}
+
+
+abstract class Pessoa{
+
+  fun comer() : String {
+
+
+      return "esta comendo"
+  }
+  */
+/*  // quando colocado como abstado o metodo, todas as classes filhas devem implementar o metodo obrigatoriamente
+
+   abstract  fun seCandidatarCargoPolitico(){
+      println("candidatar-se a cargo politico");
+    }
+  }
+  *//*
+
+
+// abaixo podemov verificar que a class DesenvolvedorAdnroditivo herda de pessoa
+class DesenvolvedorAdnroditivo : Pessoa() {
+  fun programar(){
+    println("programando como um desenvolvedor adnroid")
+  }
+
+}
+class FuncionarioPublico : Pessoa() {
+  fun trabalhar(){
+    println("trabalhando como um funcionario publico")
+  }
+}
+  class Jornallista : Pessoa(), CandidatoApresidencia{ // Declara uma classe chamada Jornallista que herda da classe Pessoa e implementa a interface CandidatoApresidencia
+    fun reportar(){ // cria uma função chamada reportar dentro da classe Jornallista
+      println("reportando como um jornalista") // Imprime a mensagem "reportando como um jornalista" no console
+
+    }
+    override fun seCandidatar(): String { // Sobrescreve a função seCandidatar definida na interface CandidatoApresidencia
+      // // Indica que a implementação desta função ainda não foi feita, para isso, se usa o printlin
+      return "candidatar-se a cargo politico";
+    }
+
+  }
+
+
+    class DevWebDevops : Pessoa(), CandidatoApresidencia {
+    fun deployar(){
+      println("deployando como um dev web devops")
+    }
+
+      override fun seCandidatar() : String {
+        return "se candidatar a cargo politico"
+      }
+    }
+
+}
+*/
+
+// ---------------------------------compenion object-------------------------------------------------

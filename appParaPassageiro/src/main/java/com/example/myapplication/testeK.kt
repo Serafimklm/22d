@@ -1,3 +1,4 @@
+/*
 package com.example.myapplication
 
 import com.example.recursoscompartilhadosentreapps.Passageiro
@@ -7,4 +8,4 @@ fun main() {
     passageiro.nome = "senna"
     passageiro.caucularPrecoPassagem()
     println("o nome do passageiro é: ${passageiro.nome}")
-}
+}*/
