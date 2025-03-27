@@ -4,7 +4,6 @@ package com.example.myapplication
 import com.example.myapplication.Pessoa.DevWebDevops
 import com.example.myapplication.Pessoa.FuncionarioPublico
 import com.example.myapplication.Pessoa.Jornallista*/
-import java.util.Scanner
 
 /*
 //import com.example.myapplication.Passaro
@@ -545,3 +544,127 @@ class FuncionarioPublico : Pessoa() {
 */
 
 // ---------------------------------compenion object-------------------------------------------------
+/**/
+/*class Carro (
+//    var modelo : String = "",
+//    var velocidade : Int = 0,
+//)
+//{
+//    companion object{
+//        //tudo que sera colocado dentro de compenium nao precisa instanciar carro para poder utlizar
+//        //ABAIXO UMA CONSTANTE SENDO CRIADA
+//        const val VELOCIDADE_LIMITE = 120;
+//    }
+//
+//    fun exbirInformacoes(){
+//        println("veiculo: $modelo esta a $velocidade km/h")
+//    }
+//}
+//
+//class Usuario{
+////    fun verficarUserLogado(): Boolean {
+////        return true;
+////    }
+//    //agora, para facilitar a instanciacao sem necessidade de ficar sempre repetindo a mesma coisa, pode-se usar o companion object
+//    companion object{
+//        fun verficarUserLogado(): Boolean {
+//          //retorno sempre sera verdadeiro
+//            return true;
+//        }
+//    }
+//}
+//fun main() {
+//
+//    println("a velocidade limite é: ${Carro.VELOCIDADE_LIMITE}")
+//   val carro = Carro("Corolla", 100)
+//    carro.exbirInformacoes()
+//
+//    println("Math.PI Valor de PI = ${Math.PI}")
+//
+//    val ferrari = Carro("Ferrari", 200);
+//    ferrari.exbirInformacoes();
+//
+//    println("=====================================================================================================")
+////    agora basta usar o companion object, Usuario.verficarUserLogado()
+//      val retono = Usuario.verficarUserLogado();
+//    println("o user logador e $retono")
+//    //se nao quiser fazer a instanciacao como abaixo, basta simplificar
+////    val usuario = Usuario();
+////    usuario.verficarUserLogado()
+//
+//    // como o mesmo e feito em java
+////    internal object User {
+////        // para que ele seja um valor de instancia fixo se faz necessario usar o STATIC
+////        const val QUANTIDADE_MAX_CONECXOS: Int = 4
+////
+////        fun verificarUserLogado(): Boolean {
+////            // fazendo a verificacao
+////            return true
+////        }
+////    }
+////
+////    internal object Scratch {
+////        @JvmStatic
+////        fun main(args: Array<String>) {
+////            val QTDUSER = User.QUANTIDADE_MAX_CONECXOS
+////            val retorno = User.verificarUserLogado()
+////            println(retorno)
+////
+////            println("A quatnidade maxima de concexoes e $QTDUSER")
+////        }
+////
+}}*/
+
+
+//=============================================ENUM===============================================================
+/*
+enum class StatusPedido{
+    AGUARDANDO_PAGAMENTO,
+    PEDIDO_REALIZADO,
+    PAGAMENTO_APROVADO,
+    PRONTO_PARA_ENVIO,
+    SAIU_PARA_ENTREGA,
+}
+
+class Pedido (
+    var total  : Double = 0.0,
+    var itens : String = "",
+    var statusPedido : StatusPedido = StatusPedido.AGUARDANDO_PAGAMENTO)
+
+fun main() {
+    // supunhetamos que o usuario esta na tela de compras, nela ele tem os status do pedido:
+    val pedido = Pedido(125.9, "camisa e livro");
+
+    pedido.statusPedido = StatusPedido.SAIU_PARA_ENTREGA;
+
+    pedido.statusPedido = StatusPedido.PAGAMENTO_APROVADO;
+
+    pedido.statusPedido = StatusPedido.PEDIDO_REALIZADO;
+
+    // transportadora
+    if (pedido.statusPedido == StatusPedido.PRONTO_PARA_ENVIO) {
+        println("o pedido foi realizado com sucesso")
+    } else if (pedido.statusPedido == StatusPedido.PAGAMENTO_APROVADO){
+        println("o pagamento foi aprovado");
+    } else if (pedido.statusPedido == StatusPedido.SAIU_PARA_ENTREGA);     println("o pedido saiu para entrega");
+
+
+}*/
+//==================================================laternit================================================================================================================
+// como utilizar inicializacao terdia, basicamente o lateinit serve para inicializar uma propriedade terdimanente, como o proprio nome ja sujere
+
+
+class Produto {
+    // para que nao seja necessario inicilizar o atributo descricao, basta colocar o lateinit, o que dispensa a utilizacao de ? apos o nome String, tambem : String? = null
+//    porem caso nao seja inicializado aparecera uma mensagem de erro avisando que tal atributo nao foi inicializado
+    lateinit var descricao : String
+
+}
+
+fun main() {
+   val produto = Produto();
+    produto.descricao = "camisa";
+    println("--------------")
+    println(produto.descricao);
+
+}
